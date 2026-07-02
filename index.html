@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistemas del Cuerpo Humano</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f0f4f8;
+    margin:0;
+    text-align:center;
+}
+
+header{
+    background:#1976d2;
+    color:white;
+    padding:20px;
+}
+
+.menu{
+    margin:20px;
+}
+
+button{
+    padding:10px 15px;
+    margin:5px;
+    border:none;
+    border-radius:8px;
+    background:#1976d2;
+    color:white;
+    cursor:pointer;
+    font-size:16px;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#0d47a1;
+}
+
+#contenido{
+    max-width:900px;
+    margin:auto;
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 0 10px rgba(0,0,0,.2);
+    margin-bottom:30px;
+}
+
+img{
+    width:350px;
+    max-width:100%;
+    border-radius:10px;
+    margin:15px 0;
+}
+
+h2{
+    color:#1976d2;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Sistemas del Cuerpo Humano</h1>
+<p>Explora los principales sistemas del organismo.</p>
+</header>
+
+<div class="menu">
+
+<button onclick="mostrar('nervioso')">Sistema Nervioso</button>
+
+<button onclick="mostrar('oseo')">Sistema Óseo</button>
+
+<button onclick="mostrar('sanguineo')">Sistema Sanguíneo</button>
+
+<button onclick="mostrar('muscular')">Sistema Muscular</button>
+
+<button onclick="mostrar('respiratorio')">Sistema Respiratorio</button>
+
+<button onclick="mostrar('digestivo')">Sistema Digestivo</button>
+
+</div>
+
+<div id="contenido">
+
+<h2>Bienvenido</h2>
+
+<p>Selecciona uno de los sistemas para conocer su función.</p>
+
+</div>
+
+<script>
+
+const sistemas={
+
+nervioso:{
+titulo:"Sistema Nervioso",
+imagen:"sistema nervioso.png",
+texto:"Controla y coordina todas las funciones del cuerpo mediante el cerebro, la médula espinal y los nervios."
+},
+
+oseo:{
+titulo:"Sistema Óseo",
+imagen:"esqueleto.jpg",
+texto:"Está formado por 206 huesos. Da soporte al cuerpo, protege los órganos internos y permite el movimiento."
+},
+
+sanguineo:{
+titulo:"Sistema Sanguíneo",
+imagen:"sangre.jpg",
+texto:"Transporta oxígeno, nutrientes, hormonas y elimina desechos mediante la sangre."
+},
+
+muscular:{
+titulo:"Sistema Muscular",
+imagen:"musculos.jpg",
+texto:"Permite mover el cuerpo, mantener la postura y producir calor."
+},
+
+respiratorio:{
+titulo:"Sistema Respiratorio",
+imagen:"naris.jpg",
+texto:"Permite obtener oxígeno del aire y expulsar dióxido de carbono."
+},
+
+digestivo:{
+titulo:"Sistema Digestivo",
+imagen:"panza.jpg",
+texto:"Transforma los alimentos en nutrientes y energía para el funcionamiento del organismo."
+}
+
+};
+
+function mostrar(nombre){
+
+document.getElementById("contenido").innerHTML=`
+
+<h2>${sistemas[nombre].titulo}</h2>
+
+<img src="${sistemas[nombre].imagen}" alt="${sistemas[nombre].titulo}">
+
+<p>${sistemas[nombre].texto}</p>
+
+`;
+
+}
+
+</script>
+
+</body>
+</html>
